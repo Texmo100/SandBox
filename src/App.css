@@ -1,8 +1,82 @@
-/* CSS General Rules */
+/* CSS Utilies */
+p{
+    margin: 0;
+}
 
+button{
+    display: block;
+    padding: 1rem;
+    border: none;
+    font-size: 1.4rem;
+    background-color: #333333;
+    color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #454545;
+}
+
+/* CSS General Rules */
 .wrapper{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+}
+
+.card{
+    background-color: #333333;
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 1200px){
+    .card{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .wrapper{
+        align-items: initial;
+    }
+    .card{
+        width: 95%;
+    }
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    background-image: url(./Img/japaneseCorridor.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.description > p{
+    margin: 0 5rem;
+}
+
+.button-blue{
+    border: 1px solid aqua;
+}
+
+.button-red{
+    border: 1px solid indianred;
 }

@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import Card from './Components/Card'
 import './App.css';
 
 class App extends Component {
   render(){
     return (
       <div className="wrapper">
-        <h1>hey yui this a sand box</h1>
+        <Card name={'Toriis path'}/>
       </div>
     );
   }
