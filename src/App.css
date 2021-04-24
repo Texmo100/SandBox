@@ -11,6 +11,7 @@ button{
     background-color: #333333;
     color: #e8e8e8;
     border: 1px solid #e8e8e8;
+    transition: all 200ms;
 }
 button:hover{
     cursor: pointer;
@@ -19,8 +20,9 @@ button:hover{
 
 /* CSS General Rules */
 .wrapper{
-    height: 100vh;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
@@ -28,18 +30,13 @@ button:hover{
 
 .card{
     background-color: #333333;
-    width: 25%;
-    height: 50%;
+    width: 50%;
+    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-}
-
-@media screen and (max-width: 1200px){
-    .card{
-        width: 50%;
-    }
+    margin: 2rem 0;
 }
 
 @media screen and (max-width: 850px){
@@ -47,7 +44,7 @@ button:hover{
         align-items: initial;
     }
     .card{
-        width: 95%;
+        width: 100%;
     }
 }
 
@@ -70,7 +67,7 @@ button:hover{
 }
 
 .description > p{
-    margin: 0 5rem;
+    margin: 0 2rem;
 }
 
 .button-blue{
