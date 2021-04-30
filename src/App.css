@@ -1,79 +1,43 @@
-/* CSS Utilies */
-p{
-    margin: 0;
-}
-
-button{
-    display: block;
-    padding: 1rem;
-    border: none;
-    font-size: 1.4rem;
-    background-color: #333333;
-    color: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all 200ms;
-}
-button:hover{
-    cursor: pointer;
-    background-color: #454545;
-}
-
-/* CSS General Rules */
-.wrapper{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.card{
-    background-color: #333333;
+.todo-list {
+    background-color: white;
+    margin: auto;
     width: 50%;
-    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 1rem;
-    margin: 2rem 0;
+    border: 1px solid #efefef;
+    box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+    padding: 30px;
 }
 
-@media screen and (max-width: 850px){
-    .wrapper{
-        align-items: initial;
-    }
-    .card{
-        width: 100%;
-    }
-}
-
-.image{
-    width: 100%;
-    height: 100%;
-    background-image: url(./Img/japaneseCorridor.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-}
-
-.description{
+.todo-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 30px 20px 0;
+    width: 70%;
+    border-bottom: 1px solid #cecece;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #333333;
 }
 
-.description > p{
-    margin: 0 2rem;
+input[type=checkbox] {
+    margin-right: 10px;
+    font-size: 30px;
 }
 
-.button-blue{
-    border: 1px solid aqua;
-}
-
-.button-red{
-    border: 1px solid indianred;
+input[type=checkbox]:focus {
+    outline: 0;
 }
