@@ -1,22 +1,24 @@
-import React, { Component } from "react"
-import './App.css'
+import React from 'react';
+import './App.css';
+import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Components/Home';
+import Reports from './Components/Reports';
+import Products from './Components/Products';
 
-class App extends Component {
-  render() {
-    const mainBranchColor = "#cc3355"
-    const projectColor = "#2cbdbb"
-    return (
-      <div className="wrapper">
-        <p className="message">
-          Hi this is the <span style={{color: mainBranchColor}}>main branch</span> of this <span style={{color: projectColor}}>SandBox</span> project. 
-          Don't forget to move to another branch within this 
-          repository which you can see the other coolest features that i've created
-        </p>
-
-        <p className="y-user">Texmo100</p>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/reports' component={Reports} />
+          <Route path='/products' component={Products} />
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;
