@@ -1,0 +1,12 @@
+.left-side {
+    flex: 2;
+    background-image: url('../../Img/japaneseCorridor.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (max-width: 768px){
+    .left-side{
+        flex: 1;
+    }
+}

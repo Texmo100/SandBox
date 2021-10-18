@@ -1,0 +1,12 @@
+.right-side {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 768px){
+    .right-side{
+        flex: 3;
+        align-items: initial;
+    }
+}
