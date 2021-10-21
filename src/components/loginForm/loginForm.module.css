@@ -1,0 +1,16 @@
+.login-form{
+    height: 80%;
+    width: 100%;
+}
+@media  screen and (max-width: 768px) {
+    .login-form{
+        margin-top: -5rem;
+        background-color: #2b2b2b;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+}
+.login-form > h1{
+    font-size: 4rem;
+    text-align: center;
+}

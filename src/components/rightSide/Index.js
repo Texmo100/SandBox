@@ -1,10 +1,10 @@
 import React from 'react'
-import LoginForm from '../loginForm/Index'
-import './rightSide.css'
+import LoginForm from '../LoginForm/Index'
+import styles from './rightSide.module.css'
 
 const Index = () => {
     return(
-        <div className='right-side'>
+        <div className={styles['right-side']}>
             <LoginForm />
         </div>
     )

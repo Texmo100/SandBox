@@ -1,14 +1,28 @@
 import React, { useState } from 'react'
-import './loginForm.css'
+
+import Form from '../Form/Index'
+import styles from './loginForm.module.css'
 
 const Index = () => {
     // useState Variables
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
+    const [isValidUser, setIsValidUser] = useState(true)
+    const [isValidPass, setIsValidPass] = useState(true)
+    const [auth, setAuth] = useState(true)
 
     // input handler function
     const inputHandler = event => {
         const { value, name } = event.target
+
+        if(userName.trim().length > 0){
+            setIsValidUser(true)
+            setAuth(true)
+        }
+        if(password.trim().length > 0){
+            setIsValidPass(true)
+            setAuth(true)
+        }
 
         if(name === 'userName'){
             setUserName(value)
@@ -20,14 +34,26 @@ const Index = () => {
     // submit handler function
     const submitHandler = event => {
         event.preventDefault()
-        const userData = {
-            id: Math.random().toString(),
-            userName: userName,
-            password: password
+        if(userName.trim().length === 0){
+            setIsValidUser(false)
         }
-
-        console.log(userData)
-        inputCleaner()
+        if(password.trim().length === 0){
+            setIsValidPass(false)
+        }
+        if((userName.trim().length > 0 )&& (password.trim().length > 0)){
+            const userData = {
+                id: Math.random().toString(),
+                userName: userName,
+                password: password
+            }
+            if(fakeAuthApi(userData) === true){
+                console.log(userData)
+                inputCleaner()
+            }else{
+                console.log('FakeAuthApi returns false')
+                setAuth(false)
+            }
+        }
     }
 
     // input cleaner function
@@ -36,33 +62,51 @@ const Index = () => {
         setPassword('')
     }
 
+    // fake user
+    const fakeUser = {
+        userName: 'Texmo100',
+        password: 'alteryui'
+    }
+
+    // fakeAuthApi function which is in charge to verify the userData
+    const fakeAuthApi = user => {
+        if((fakeAuthUserName(user.userName) === false) || (fakeAuthPassword(user.password) === false)){
+            return false
+        }else{
+            return true
+        }
+    }
+
+    // fakeAuthUserName function which is in charge to verify if userName is equal to fakeUser userName
+    const fakeAuthUserName = userName => {
+        if(userName !== fakeUser.userName){
+            return false
+        }else{
+            return true
+        }
+    }
+
+    // fakeAuthPassword function which is in charge to verify if password is equal to fakeUser password
+    const fakeAuthPassword = password => {
+        if(password !== fakeUser.password){
+            return false
+        }else{
+            return true
+        }
+    }
+
     return (
-        <div className='login-form'>
+        <div className={styles['login-form']}>
             <h1>Login</h1>
-            <form className='form' onSubmit={submitHandler}>
-                {/* label and input */}
-                <label className='form__label'>User name</label>
-                <input
-                    className='form__input form__input--placeholder'
-                    type='text'
-                    name='userName'
-                    value={userName}
-                    placeholder='user name'
-                    onChange={inputHandler}
-                />
-                {/* label and input */}
-                <label className='form__label'>Password</label>
-                <input
-                    className='form__input form__input--placeholder'
-                    type='password'
-                    name='password'
-                    value={password}
-                    placeholder='password'
-                    onChange={inputHandler}
-                />
-                {/* submit */}
-                <input type='submit' value='submit' className='form__submit form__submit--hover'/>
-            </form>
+            <Form
+                userName={userName}
+                password={password}
+                isValidUser={isValidUser}
+                isValidPass={isValidPass}
+                auth={auth}
+                onInputHandler={inputHandler}
+                onSubmitHandler={submitHandler}
+            />
         </div>
     )
 }

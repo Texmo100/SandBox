@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from './components/Wrapper'
-import LeftSide from './components/leftSide/Index'
-import RightSide from './components/rightSide/Index'
+import LeftSide from './components/LeftSide/Index'
+import RightSide from './components/RightSide/Index'
 import './App.css'
 
 const App = () => {
