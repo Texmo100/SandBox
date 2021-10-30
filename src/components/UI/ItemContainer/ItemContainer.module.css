@@ -1,0 +1,12 @@
+.container{
+    width: 50%;
+    background-color: var(--black-y-2);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+@media screen and (max-width:768px){
+    .container{
+        width: 95%;
+    }
+}

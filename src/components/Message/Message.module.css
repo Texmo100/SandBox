@@ -1,0 +1,22 @@
+p{
+    margin: 0;
+}
+.greetings, .guide, .guideline{
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+.greetings, .guideline{
+    text-align: justify;
+}
+.greetings > span:nth-child(1) {
+    color: var(--main-color);
+}
+.greetings > span:nth-child(2) {
+    color: var(--raspberry-color);
+}
+.guide{
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--raspberry-color);
+}

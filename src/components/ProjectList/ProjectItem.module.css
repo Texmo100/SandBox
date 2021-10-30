@@ -1,0 +1,20 @@
+p{
+    margin: 0;
+}
+.project-item{
+    flex-basis: 20rem;
+    border: 1px solid var(--line-gray);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease;
+}
+.project-item:hover{
+    cursor: pointer;
+    background-color: var(--raspberry-color);
+    transform: scale(1.1,1.1);
+}
