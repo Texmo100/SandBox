@@ -27,7 +27,7 @@ const projectsData = [
     {
         id: 6,
         projectName: "pop up colors",
-        version: "1.0"
+        version: "2.0"
     },
 ]
 
