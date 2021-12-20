@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import Form from '../Form/Index'
-import styles from './loginForm.module.css'
+import Form from '../Form/Form'
+import styles from './LoginForm.module.css'
 
-const Index = () => {
+const LoginForm = () => {
     // useState Variables
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -111,4 +111,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default LoginForm

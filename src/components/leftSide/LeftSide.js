@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from './leftSide.module.css'
+import styles from './LeftSide.module.css'
 
 
-const Index = () => {
+const LeftSide = () => {
     return(
         <div className={styles['left-side']}></div>
     )
 }
 
-export default Index
+export default LeftSide

@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './form.module.css'
+import styles from './Form.module.css'
 
 
-const Index = props => {
+const Form = props => {
     return (
         <form className={styles.form} onSubmit={props.onSubmitHandler}>
             {/* label and input */}
@@ -41,4 +41,4 @@ const Index = props => {
     )
 }
 
-export default Index
+export default Form

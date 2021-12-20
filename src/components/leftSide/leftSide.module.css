@@ -1,6 +1,6 @@
 .left-side {
     flex: 2;
-    background-image: url('../../Img/japaneseCorridor.jpg');
+    background-image: url('../../assets/japaneseCorridor.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
