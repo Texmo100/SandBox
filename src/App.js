@@ -1,5 +1,5 @@
 import React from 'react'
-import Wrapper from './components/Wrapper'
+import Wrapper from './components/UI/Wrapper/Wrapper'
 import LeftSide from './components/LeftSide/LeftSide'
 import RightSide from './components/RightSide/RightSide'
 import './App.css'

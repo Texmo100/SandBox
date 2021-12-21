@@ -1,0 +1,22 @@
+.form__submit{
+    width: 50%;
+}
+@media screen and (max-width: 768px){
+    .form__submit{
+        width: 65%;
+    }
+}
+.form__submit{
+    display: block;
+    margin-top: 4rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10rem;
+    background-color: #202020;
+    color: #e8e8e8;
+    transition: all 300ms ease;
+}
+.form__submit:hover{
+    cursor: pointer;
+    background-color: #000;
+}

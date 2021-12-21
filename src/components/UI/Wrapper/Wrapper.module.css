@@ -1,0 +1,11 @@
+.wrapper{
+    height: 100vh;
+    background-color: var(--black-y-1);
+    color: var(--white-y-1);
+    display: flex;
+}
+@media screen and (max-width: 768px){
+    .wrapper{
+        flex-direction: column;
+    }
+}
