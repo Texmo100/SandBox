@@ -22,7 +22,7 @@ const projectsData = [
     {
         id: 5,
         projectName: "login page",
-        version: "2.0"
+        version: "3.0"
     },
     {
         id: 6,
