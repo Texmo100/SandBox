@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../UI/Input/Input';
-import Button from '../UI/Button/Button';
+import Input from '../../UI/Input/Input';
+import Button from '../../UI/Button/Button';
 import styles from './Form.module.css';
 
 const Form = props => {
@@ -33,7 +33,7 @@ const Form = props => {
             {(!props.isValidUser || !props.isValidPass) && <p style={{ color: 'red', marginTop: '2rem' }}>
                 - All the fields are required
             </p>}
-            {!props.auth && <p style={{ color: 'red', marginTop: '2rem' }}>
+            {!props.inputValid && <p style={{ color: 'red', marginTop: '2rem' }}>
                 - Username or password is incorrect
             </p>}
         </form>

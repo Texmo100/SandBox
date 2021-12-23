@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import Form from '../Form/Form';
+import UserContext from '../../../store/user-context';
+import styles from './LoginForm.module.css';
 
-import Form from '../Form/Form'
-import styles from './LoginForm.module.css'
-
-const LoginForm = () => {
+const LoginForm = props => {
     // useState Variables
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [isValidUser, setIsValidUser] = useState(true)
     const [isValidPass, setIsValidPass] = useState(true)
-    const [auth, setAuth] = useState(true)
+    const [inputValid, setInputValid] = useState(true);
 
-    // input handler function
+    const userCtx = useContext(UserContext);
+
     const inputHandler = event => {
         const { value, name } = event.target
 
         if(userName.trim().length > 0){
             setIsValidUser(true)
-            setAuth(true)
+            setInputValid(true)
         }
         if(password.trim().length > 0){
             setIsValidPass(true)
-            setAuth(true)
+            setInputValid(true)
         }
 
         if(name === 'userName'){
@@ -31,32 +32,31 @@ const LoginForm = () => {
         }
     }
 
-    // submit handler function
     const submitHandler = event => {
-        event.preventDefault()
-        if(userName.trim().length === 0){
-            setIsValidUser(false)
-        }
-        if(password.trim().length === 0){
-            setIsValidPass(false)
-        }
-        if((userName.trim().length > 0 )&& (password.trim().length > 0)){
+        event.preventDefault();
+
+        if(userName.trim().length === 0) setIsValidUser(false);
+
+        if(password.trim().length === 0) setIsValidPass(false);
+
+        if(userName.trim().length > 0 && password.trim().length > 0){
             const userData = {
                 id: Math.random().toString(),
                 userName: userName,
                 password: password
             }
-            if(fakeAuthApi(userData) === true){
-                console.log(userData)
-                inputCleaner()
+
+            if(fakeAuthApi(userData)){
+                userCtx.registerUser(userData);
+                props.onShowModal();
+                inputCleaner();
             }else{
                 console.log('FakeAuthApi returns false')
-                setAuth(false)
+                setInputValid(false)
             }
         }
     }
 
-    // input cleaner function
     const inputCleaner = () => {
         setUserName('')
         setPassword('')
@@ -68,31 +68,25 @@ const LoginForm = () => {
         password: 'alteryui'
     }
 
-    // fakeAuthApi function which is in charge to verify the userData
     const fakeAuthApi = user => {
-        if((fakeAuthUserName(user.userName) === false) || (fakeAuthPassword(user.password) === false)){
-            return false
-        }else{
-            return true
+        if(isUserName(user.userName) && isPassword(user.password)){
+            return true;
         }
+        return false;
     }
 
-    // fakeAuthUserName function which is in charge to verify if userName is equal to fakeUser userName
-    const fakeAuthUserName = userName => {
-        if(userName !== fakeUser.userName){
-            return false
-        }else{
-            return true
+    const isUserName = userName => {
+        if(fakeUser.userName === userName){
+            return true;
         }
+        return false;
     }
 
-    // fakeAuthPassword function which is in charge to verify if password is equal to fakeUser password
-    const fakeAuthPassword = password => {
-        if(password !== fakeUser.password){
-            return false
-        }else{
-            return true
+    const isPassword = password => {
+        if(fakeUser.password === password){
+            return true;
         }
+        return false;
     }
 
     return (
@@ -103,7 +97,7 @@ const LoginForm = () => {
                 password={password}
                 isValidUser={isValidUser}
                 isValidPass={isValidPass}
-                auth={auth}
+                inputValid={inputValid}
                 onInputHandler={inputHandler}
                 onSubmitHandler={submitHandler}
             />
