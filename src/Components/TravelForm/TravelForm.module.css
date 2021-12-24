@@ -1,20 +1,3 @@
-.wrapper{
-    /*height: 100vh;
-    width: 50%;
-    margin: 0 auto;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-@media screen and (max-width: 768px){
-    .wrapper{
-        padding: 2rem;
-        flex-direction: column;
-        justify-content: initial;
-        align-items: initial;
-    }
-}
 .form{
     background-color: #333333;
     height: 50%;
@@ -23,26 +6,31 @@
     border-radius: 1rem;
     margin-right: 2rem;
 }
+
 @media screen and (max-width: 768px){
     .form{
         height: 50%;
         width: 100%;
     }
 }
-.form-element{
+
+.form__element{
     display: flex;
     flex-direction: column;
     margin: 2rem 0;
 }
-.form-element > label, .form-element > input{
+
+.form__element > label, .form__element > input{
     display: block;
 }
-.form-element > label{
+
+.form__element > label{
     width: 100%;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
-.form-element > input{
+
+.form__element > input{
     height: 1rem;
     width: 100%;
     border-radius: 0.2rem;
@@ -50,25 +38,31 @@
     font-size: 1.5rem;
     border: none;
 }
-.group-radio{
+
+.form__radio{
     display: flex;
 }
-.radio-element{
+
+.form__radio__element{
     display: flex;
     align-items: center;
 }
-.radio-element:nth-child(2){
+
+.form__radio__element:nth-child(2){
     margin-left: 1rem;
 }
-.radio-element > label{
+
+.form__radio__element > label{
     font-size: 1.8rem;
 }
-.radio-element > input{
+
+.form__radio__element > input{
     width: 2rem;
     height: 2rem;
     margin: 0;
     margin-left: 0.5rem;
 }
+
 select {
     appearance: none;
     background-color: #e8e8e8;
@@ -81,30 +75,36 @@ select {
     cursor: pointer;
     line-height: inherit;
 }
+
 select::-ms-expand {
     display: none;
 }
-.group-checkbox{
+
+.form__checkbox{
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
 }
-.checkbox-element:nth-child(2){
+
+.form__checkbox__element:nth-child(2){
     display: flex;
     align-items: center;
     margin-top: 1rem;
 }
-.checkbox-element > input{
+
+.form__checkbox__element > input{
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
     margin: 0;
 }
-.checkbox-element > label {
+
+.form__checkbox__element > label {
     font-size: 1.8rem;
     margin-left: 0.5rem;
 }
-.submit-button{
+
+.form__submit-button{
     display: block;
     border: none;
     height: 4rem;
@@ -116,8 +116,7 @@ select::-ms-expand {
     font-size: 1.8rem;
 }
 
-.submit-button:hover{
+.form__submit-button:hover{
     cursor: pointer;
     background-color: #007ECB;
 }
-
