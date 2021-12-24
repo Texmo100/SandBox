@@ -7,7 +7,7 @@ const projectsData = [
     {
         id: 2,
         projectName: "travel form",
-        version: "1.0"
+        version: "2.0"
     },
     {
         id: 3,
